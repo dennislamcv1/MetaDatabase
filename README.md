@@ -2,6 +2,10 @@
 
 ## Meta Database Engineer Professional Certificate (9 course series)
 
+## Ingeniero en base de datos de Meta Professional Certificate
+
+## مهندس Meta لقواعد البيانات Professional Certificate
+
 Want to get started in the world of database engineering? This program is taught by industry-recognized experts at Meta. You’ll learn the key skills required to create, manage and manipulate databases, as well as industry-standard programming languages and software such as SQL, Python, and Django. 
 
 Upon completion, you’ll get access to the Meta Career Programs Job Board—a job search platform that connects you with 200+ employers who have committed to sourcing talent through Meta’s certificate programs, as well as career support resources to help you with your job search.
