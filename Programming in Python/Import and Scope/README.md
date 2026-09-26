@@ -1,81 +1,83 @@
 # Lab Instructions: Import and Scope
 
-So far, you've learned the different ways in which you can use import statements to import other Python files, modules and packages.   
-You have also seen the different ways in which you can import specific functions using different formats of import.   
-In this assignment you'll learn and practice how to use import to bring external code within the direct scope of the project.
+In this lab, you’ll practice using Python's `import` statement to bring external code within the scope of a project. You will:
+1. Import a built-in package using `import`.
+2. Import specific variables and functions from another Python file.
 
- <br>
+## Goals:
+- Import a built-in package and use it within the code. 
+- Import specific functions and variables from an external file.   
+
+<br>
 
 > ### **Tips: Before you Begin**
 > #### **To view your code and instructions side-by-side**, select the following in your VSCode toolbar:
 > - View -> Editor Layout -> Two Columns
-> - To view this file in Preview mode, right click on this README.md file and `Open Preview`
-> - Select your code file in the code tree, which will open it up in a new VSCode tab.
-> - Drag your assessment code files over to the second column. 
-> - Great work! You can now see instructions and code at the same time. 
+> - To view this file in Preview mode, right-click on this README.md file and select `Open Preview`
+> - Select your code file in the code tree, which will open it in a new VSCode tab.
+> - Drag your assessment code files over to the second column.
+> - Great work! You can now see instructions and code at the same time.
 > - Questions about using VSCode? Please see our support resources [here](https://www.coursera.org/learn/programming-in-python/supplement/2IEyt/visual-studio-code-on-coursera).
-> #### **To run your Python code**
-> - Select your Python file in the Visual Studio Code file tree 
-> - You can right click the file and select "Run Python File in Terminal" 
->   or run the file using the smaller   
-    play button in the upper right-hand corner 
->   of VSCode.  
-    (Select "Run Python File in Terminal" in the provided button dropdown)
-> - Alternatively, you can follow lab instructions which use python3 commands to run your code in terminal.
 > 
+> #### **To run your Python code**
+> - Select your Python file in the Visual Studio Code file tree
+> - Right-click the file and select "Run Python File in Terminal" or use the play button in the upper right-hand corner.
+> - Alternatively, you can follow lab instructions to run your code in terminal using `python3` commands.
 
 <br>
 
-## Exercise Objectives:
-- Use the import statement to import a built-in package in Python.
-- Use the import statement to call a function present in another Python file. 
-<br><br>
-
-## Instructions
-
-1.  Open the file jsongenerator.py present inside project folder.
-
-2. Import a built-in package called `json` 
-   
-3. Import the following from a file called employee.py:
-   - A function called `details` 
-   - Variables called `employee_name`, `age` and `title`
-<br><br>
-
-4. Implement the `create_dict()` function that returns a dictionary given employee information.   
-Create and return a dictionary with three key-value pairs where:
-    - Keys are string variables: `"first_name"` `“age”` and `“title”`  
-     and their respective values are `employee_name`, `age` and `title` variables that we have imported from the employee module. 
-    - Be sure to cast the values to the expected types.
-<br><br>
-
-5. Use a function called `dumps()` from the json module using dot notation and pass the `employee_dict` dictionary that we have created to it.   
-Return its value to a variable named `json_object`. 
-
-    The format of the same should look like:
-    ```
-    variable = json.dumps(dict) 
-    ```
-
-6. Complete the `write_json_to_file()` function
-    - Use a built-in function called `open()` and pass the `output_file` argument and `“w”` to it.   
-    Return the value of this function to a variable named newfile.
-    -   Call a function called `write()` over this variable newfile. Pass the `json_object` variable you created in Step 5 inside it.
-    - Close this file by calling a built-in function `close()` directly on newfile. You don’t need to pass any arguments here. 
-<br><br>
-
-
-7. Save the files
-
-8. Open the terminal to execute the files
-
-9. Run the code using the command (within project directory)
-   ```
-    python3 jsongenerator.py 
-    ```
+## Lab Objectives:
+- Use the `import` statement to import a built-in Python package (`json`).
+- Import specific functions and variables from another file within the same project.
+- Practice manipulating data with imported components to build and save structured information.
 
 <br>
 
+## Instructions:
+
+1. Open `jsongenerator.py` in the project folder.
+
+2. **Import a built-in package called `json`.**
+
+3. **From `employee.py`, import the following:**
+   - The `details` function.
+   - Variables: `employee_name`, `age`, and `title`.
+
+4. **Implement the `create_dict()` function.**
+   - This function should return a dictionary with three key-value pairs:
+      - `"first_name"` mapped to `employee_name`.
+      - `"age"` mapped to `age` (converted to an integer).
+      - `"title"` mapped to `title`.
+   - Make sure each value is typecast to the expected type (`employee_name` as a string, `age` as an integer, and `title` as a string).
+
+5. **Convert the Dictionary to JSON Format.**
+   - Use the `dumps()` function from the `json` module to convert `employee_dict` to JSON format.
+   - Store it in a variable named `json_object`:
+     ```python
+     json_object = json.dumps(employee_dict)
+     ```
+
+6. **Complete the `write_json_to_file()` function.**
+   - Open a file using the name provided in the `output_file` argument, in `"w"` (write mode), and assign it to a variable named `newfile`.
+   - Use the `write()` method to write `json_object` to `newfile`.
+   - Close the file using the `close()` method on `newfile`.
+
+7. **Save the files.**
+
+8. **Run the Code.**
+   - Open the terminal in the project directory and execute:
+     ```bash
+     python3 jsongenerator.py
+     ```
+
+
+## Expected Output:
+
+When `jsongenerator.py` is executed, the output should display:
+1. Employee details from `details()`.
+2. The dictionary containing employee data.
+3. The JSON string representation of this dictionary.
+<br><br>
 
 ## Final Step: Let's submit your code!
 Nice work! To complete this assessment:

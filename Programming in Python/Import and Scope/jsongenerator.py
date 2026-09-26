@@ -5,7 +5,7 @@ Import statements:
 '''
 ### WRITE IMPORT STATEMENTS HERE
 import json
-from employee import *
+from employee import details, employee_name, age, title
 
 def create_dict(name, age, title):
     """ Creates a dictionary that stores an employee's information
@@ -24,31 +24,23 @@ def create_dict(name, age, title):
                the values are typecasted correctly (name - string, age - int, 
                title - string)
     """
-    ### WRITE SOLUTION HERE
-    return {
-        'first_name': name,
-        'age': int(age),
-        'title':title
-    } 
-
-    raise NotImplementedError()
+    return {"first_name": str(name), "age": int(age), "title": str(title)}
+    
 
 def write_json_to_file(json_obj, output_file):
     """ Write json string to file
 
     [IMPLEMENT ME]
-        1. Open a new file defined by output_file
+        1. Open the employee.json file
         2. Write json_obj to the new file
 
     Args:
         json_obj: json string containing employee information
-        output_file: the file the json is being written to
     """
-    ### WRITE SOLUTION HERE
-    with open(output_file, "w") as file:
-        return file.write(json_obj)
+    newfile = open(output_file, "w")
+    newfile.write(json_obj)
+    newfile.close()
 
-    raise NotImplementedError()
 
 def main():
     # Print the contents of details() -- This should print the details of an employee

@@ -13,18 +13,17 @@ class Bank(ABC):
            adding the `pass` keyword under it. Make this function abstract by
            adding an '@abstractmethod' tag right above the function declaration.
     """
-    ### YOUR CODE HERE
     def basicinfo(self):
-        print('This is a generic bank')
-        return 'Generic bank: 0'
+        print("This is a generic bank")
+        return "Generic bank: 0"
 
     @abstractmethod
-    def withdraw():
+    def withdraw(self):
         pass
 
 # Class Swiss
 class Swiss(Bank):
-    """ A specific type of bank than derives from class Bank
+    """ A specific type of bank that derives from class Bank
 
     [IMPLEMENT ME]
         1. This class must derive from class Bank
@@ -48,24 +47,20 @@ class Swiss(Bank):
                  statement saying `"Insufficient funds"`, and return the 
                  original account balance instead.
     """
-    ### YOUR CODE HERE
-
     def __init__(self):
         self.bal = 1000
-
 
     def basicinfo(self):
         print("This is the Swiss Bank")
         return "Swiss Bank: " + str(self.bal)
-        
-    def withdraw(self,amount):
-        if amount>self.bal:
+
+    def withdraw(self, amount):
+        if amount > self.bal:
             print("Insufficient funds")
             return self.bal
-        self.bal = self.bal - amount
-        
-        print("Withdrawn amount: {}".format(amount))
-        print("New Balance: {}".format(self.bal))
+        self.bal -= amount
+        print(f"Withdrawn amount: {amount}")
+        print(f"New Balance: {self.bal}")
         return self.bal
 
 # Driver Code

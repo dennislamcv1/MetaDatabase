@@ -1,14 +1,10 @@
-# Lab Instructions: Write a test
+# Lab Instructions: Writing PyTest Test Cases for String Validation
 
-In this exercise, you'll learn how to create test cases for a given block of code using PyTest.  
-
-You will be checking the accuracy of a string input to a given function against some conditions and writing two functions:
-- **The first function** will check if the length of the input string is within a   
-specific limit of words and characters. 
-- **The second function** will check if the basic grammar of the string is well-defined.
+### **Introduction:**
+In this lab, you will validate a string input using two specific tests: one to check the length and structure of the input string, and another to verify basic grammar rules. This will involve creating test cases using PyTest to ensure these checks are met.
  <br><br>
 
-> ### **Tips: Before you Begin**
+> ### **Tips: Before you Begin:**
 > #### **To view your code and instructions side-by-side**, select the following in your VSCode toolbar:
 > - View -> Editor Layout -> Two Columns
 > - To view this file in Preview mode, right click on this README.md file and `Open Preview`
@@ -28,59 +24,70 @@ specific limit of words and characters.
 
 <br>
 
-## Objective of this activity:   
-Ensure the string variables that will be passed as arguments to the code are within a specified length and have a well-defined structure.<br><br>
-
-## Instructions:
-
-1. Open the `test_spellcheck.py` file inside the project folder.
-
-2. Import the `pytest` and `spellcheck` modules.
-3. Comment out the beta variable using # symbol for now. 
-4. Next, complete the `test_length()` and `test_struc()` functions.   
-   These two functions use input_value to check if the functions defined in spellcheck behave correctly. 
-5.  In `test_length()` function, you must add two assert statements.   
-    In each assert statement you first need to call the required function from the spellcheck file that you imported,  
-    and then check against some conditions. For example, the format will be similar to the following against some condition:
-    ```
-    assert spellcheck.some_function(input_value)
-    ```
-    - 5.1: Add the first assert statement over `function word_count()` from the main code which asserts that the returned value is less than 10.
-    - 5.2: Add the second assert statement over `function char_count()` from the main code which asserts that the returned value is less than 50. 
-<br><br>
-
-6. In the second function `test_struc()`, you must add two assert statements. The first assert statement checks if the first character is in upper case.  
-The second assert statement checks if the sentence or the string variable passed ends with a dot (“.”) 
-    - Add the first assert statement over function `first_char()` from the main code.  
-      Now call a built-in function `isupper()` directly over it, such as `function_name.isupper()`. 
-    - `isupper()` function returns True if it is called over an upper-case character and False if called over a lower-case character.  
-      For example, `"A".isupper()` returns `True` and `"a".isupper()` returns `False`.
-    - Add the second assert statement over the function `last_char()`from the main code and compare it to `“.” ` 
-<br><br>
-
-7. Save the files.
-8. Open the terminal to execute the files.
-9. Run the code using the following command (within the  project directory):
-    ```
-    python3 -m pytest test_spellcheck.py 
-    ```
-10. Both the tests should pass in this case.  
-
-
-- **BONUS STEP:**<br>
-Pass the variable beta instead of alpha in all four of the functions.  
-The result should now show one passed and one failed test.  
+### **Goal:**
+Learn to create automated test cases using PyTest to validate code functionality based on predefined criteria.
 
 <br>
 
-> **Tips**<br>
-> Be sure to double check some common mistakes made in this process 
-  below before submitting!  
-> - Forgetting to import the `pytest` and `main` code file
-> - Not passing the variable names correctly
-> 
+### **Objectives:**
+- Verify that string inputs meet specified length constraints (word and character limits).
+- Ensure that string inputs adhere to basic structural rules, such as starting with an uppercase letter and ending with a period.
+
 <br>
 
+### **Instructions:**
+<br>
+
+#### **1. Setup**
+- Open the `test_spellcheck.py` file in the **PROJECT** folder.
+
+#### **2. Import Required Modules**
+- Import the `pytest` module and the `spellcheck` module, which contains the functions you’ll be testing.
+
+#### **3. Define Test String Variables**
+- In `test_spellcheck.py`, two variables are already defined:
+  - `alpha`: A string that should pass the tests.
+  - `beta`: A string that should fail one of the tests (for the bonus step).
+- Comment out the `beta` variable using the `#` symbol for now.
+
+#### **4. Create PyTest Fixture**
+- Create a fixture named `input_value()` that returns `alpha` as the default input string to be tested. This will allow you to test both functions with `alpha` by default.
+
+#### **5. Write Test Functions**
+
+- **Function `test_length()`**
+   - This function should check the length of the string in terms of both words and characters.
+   - **Step 5.1**: Add an `assert` statement to check that the `word_count()` function (from `spellcheck`) returns a value less than 10.
+   - **Step 5.2**: Add an `assert` statement to check that the `char_count()` function (from `spellcheck`) returns a value less than 50.
+
+- **Function `test_struc()`**
+   - This function should check if the string adheres to basic grammar rules.
+   - **Step 6.1**: Add an `assert` statement to call `first_char()` and check that the returned character is uppercase using `.isupper()`.
+   - **Step 6.2**: Add an `assert` statement to call `last_char()` and check that it returns a period (`"."`).
+
+#### **6. Save and Run Tests**
+- After modifying the script, navigate to **File** > **Save** to save changes in the script. 
+- In the **PROJECT** directory, navigate to **Terminal > New Terminal**.
+- Run the test script using the following command:
+  ```bash
+  pytest test_spellcheck.py
+- Both tests should pass if your code is implemented correctly.
+
+### **Bonus Step:**
+- Update the `input_value` fixture to return `beta` instead of `alpha`.  
+- Rerun the tests. One of the tests should now fail, demonstrating that the tests can detect incorrect input based on the criteria defined.
+
+<br>
+
+### **Expected Results:**
+- With `alpha` as the input, both tests should pass.
+- With `beta` as the input (in the bonus step), one test should fail.
+
+<br>
+
+### **Notes:**
+- **Common Issue:** Double-check that `pytest` and `spellcheck` are correctly imported.
+- **Tip:** Use `print()` statements in the functions if you need help troubleshooting the test cases.
 
 ## Final Step: Let's submit your code!
 Nice work! To complete this assessment:
